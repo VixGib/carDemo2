@@ -2,6 +2,7 @@ package com.lbg;
 
 import com.lbg.classes.Car;
 import com.lbg.classes.CarColour;
+import com.lbg.classes.Wheel;
 
 public class Main {
     public static void main(String[] args)
@@ -45,6 +46,21 @@ public class Main {
             System.out.println(car.getColour());
             System.out.println(car.getModel());
         }
+
+        Wheel wheel1 = new Wheel();
+        Wheel wheel2 = new Wheel();
+
+        wheel1.setX_position(10);
+        wheel1.setY_position(20);
+
+        wheel2.setX_position(-10);
+        wheel2.setY_position(-20);
+
+        System.out.println(wheel1.distanceFrom(wheel2.getX_position(), wheel2.getY_position()));
+
+        Wheel wheel3 = new Wheel(25, 50);
+        System.out.println(wheel3.getX_position() + " " + wheel3.getY_position() );
+
     }
 
 
