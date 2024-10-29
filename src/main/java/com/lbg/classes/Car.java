@@ -1,10 +1,13 @@
 package com.lbg.classes;
 
-// car is a kind of vehicle
-public class Car extends Vehicle{
+// car is "a kind of vehicle" - now has wheels based on vehicle abstract class
+// final means that you can't have a class that inherits from this class there can be no sub-class
+public final class Car extends Vehicle implements ISteerable{
     // constructors
 
     public Car(String model, String make){
+        // chaining constructors from base class
+        super(4, "Car Unregistered");
         this.setModel(model);
         this.setMake(make);
     }
@@ -37,6 +40,14 @@ public class Car extends Vehicle{
         this.numOfDoors = numOfDoors;
     }
 
+
+    //
+    @Override
+    public String performService() {
+        String base = super.performService();
+        base +=  "....I am a car!";
+        return base;
+    }
 
     // annotation
     @Override
@@ -168,4 +179,13 @@ public class Car extends Vehicle{
         }
     }
 
+    @Override
+    public String turnLeft() {
+        return "Car is turning left";
+    }
+
+    @Override
+    public String turnRight() {
+        return "Car is turning right";
+    }
 }
